@@ -8,6 +8,7 @@ module.exports = (app) => {
                 return
             }
         })
-        res.json(data);
+        const notes = JSON.parse(data);
+        res.json(notes);
     })
 }
