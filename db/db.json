@@ -1,7 +1,6 @@
-[{
-    "title": "Note 1",
-    "text": "Test text"
-}, {
-    "title": "Note 2",
-    "text": "Test text"
-}]
+[
+    {
+        "title":"Test Title",
+        "text":"Test text"
+    }
+]
