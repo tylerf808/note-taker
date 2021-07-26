@@ -9,7 +9,10 @@ module.exports = (app) => {
     })
 
     app.post('/api/notes', (req, res) => {
-        
-        console.log(notes)
+        const string = fs.readFile('db/db.json', 'UTF-8', (err) => {
+            if (err)
+                console.log(err)
+        })
+        console.log(JSON.parse(string))
     })
 }
