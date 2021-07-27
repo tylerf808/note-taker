@@ -1,6 +1,6 @@
 const db = require('../db/db.json')
 const fs = require('fs');
-const { json } = require('express');
+const shortid = require("shortid");
 
 module.exports = (app) => {
 
@@ -9,10 +9,9 @@ module.exports = (app) => {
     })
 
     app.post('/api/notes', (req, res) => {
-        const string = fs.readFile('db/db.json', 'UTF-8', (err) => {
-            if (err)
-                console.log(err)
-        })
-        console.log(JSON.parse(string))
+        const notes = req.body;
+        notes.id = shortid.generate();
+        db.push(notes);
+        res.json(notes);
     })
 }
